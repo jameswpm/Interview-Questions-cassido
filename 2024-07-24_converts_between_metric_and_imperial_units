@@ -1,0 +1,28 @@
+import sys
+
+
+def convert_metric_2_imperial(number, unit):
+    if unit == "m":
+        # meters to inches
+        new_number = number * 39.3701
+        if new_number > 12:
+            # split into ft and in
+            ft = new_number // 12
+            in_ = new_number % 12
+        else:
+            print(f'{number * 39.3701}')
+
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print("Usage: python <script>.py <number> <unit>.")
+       
+        number = sys.argv[1].strip()
+        unit = sys.argv[2].strip()
+
+        match unit:
+            case "m" | "cm" | "mm":
+                convert_metric_2_imperial(number, unit)
+            case "in" | "ft":
+                convert_imperial_2_metric(number, unit)
+            case _:
+                print("I don't know that one.")
