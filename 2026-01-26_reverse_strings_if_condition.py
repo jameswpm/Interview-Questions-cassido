@@ -36,7 +36,6 @@ def flippedy(phrase: str):
 
 
 if __name__ == "__main__":
-    print(flippedy("one two three four five"))
     assert flippedy("cat and mice") == "cat dna mice"
     assert flippedy("banana healthy") == "banana healthy"
 
