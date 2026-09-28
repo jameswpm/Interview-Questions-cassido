@@ -66,21 +66,15 @@ if __name__ == "__main__":
           [0, 1, 2]]
 
 
-    print(fire_station_coverage([
-        [1, 0, 0, 1],
-        [0, 0, 0, 0],
-        [0, 0, 0, 0],
-        [1, 0, 0, 1]
-    ]))
     assert fire_station_coverage([
-        [1, 0, 0, 1],
-        [0, 0, 0, 0],
-        [0, 0, 0, 0],
-        [1, 0, 0, 1]
-    ]) == [[0, 1, 2, 0],
-          [1, 2, 2, 1],
-          [1, 2, 2, 1],
-          [0, 1, 2, 0]]
+    [1, 0, 0, 1],
+    [0, 0, 0, 0],
+    [0, 0, 0, 0],
+    [1, 0, 0, 1]
+]) == [[0, 1, 1, 0],   # (0,2) is 1 step from fire station at (0,3)
+      [1, 2, 2, 1],
+      [1, 2, 2, 1],
+      [0, 1, 1, 0]]   # (3,2) is 1 step from fire station at (3,3)
     
     # Additional test cases
     assert fire_station_coverage([
